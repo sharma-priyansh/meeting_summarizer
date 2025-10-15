@@ -1,69 +1,113 @@
-AI Meeting Summarizer - Full Stack
-This project is a full-stack application that allows users to upload an audio file of a meeting, get it transcribed by AssemblyAI, and then generate a structured summary using the Gemini API.
+# 📝 AI Meeting Summarizer - Full Stack
 
-Project Structure
-.
+A full-stack application to **transcribe meeting audio files** using [AssemblyAI](https://www.assemblyai.com/) and generate **structured summaries** via the Gemini API.
+
+---
+
+## 🚀 Features
+
+- **Upload audio files** (mp3, wav, m4a, etc.)
+- **Automatic transcription** via AssemblyAI
+- **AI-powered summaries**: Key decisions & action items (Gemini API)
+- **Tabbed interface** for viewing Transcript, Summary, Decisions & Actions
+- **Simple React frontend** + Express backend
+
+---
+
+## 📁 Project Structure
+
+```
+meeting_summarizer/
 ├── backend/
 │   ├── .env
 │   ├── package.json
 │   └── server.js
-└── frontend/
-    ├── package.json
-    └── src/
-        └── App.jsx
+├── frontend/
+│   ├── package.json
+│   └── src/
+│       └── App.jsx
+└── assets/
+    └── app-ui-example.png
+```
 
-How to Set Up and Run
-You need to run two separate processes: one for the backend server and one for the React frontend development server.
+---
 
-1. Backend Setup
-Navigate to the backend directory:
+## ⚡ Quick Start
 
+### 1️⃣ Backend Setup
+
+```bash
 cd backend
-
-Install dependencies:
-
 npm install
+```
 
-Create your environment file:
-Make sure you have a file named .env inside the backend directory.
+- **Create `.env` file** in `backend/` with your API keys:
 
-Add your API Key:
-Open the .env file and add your AssemblyAI API key. You can get your free key from assemblyai.com.
+  ```
+  ASSEMBLYAI_API_KEY=YOUR_ASSEMBLYAI_API_KEY_HERE
+  GEMINI_API_KEY=YOUR_GEMINI_API_KEY_HERE
+  ```
 
-ASSEMBLYAI_API_KEY=YOUR_ASSEMBLYAI_API_KEY_HERE
+  - Get your free AssemblyAI API key at [assemblyai.com](https://www.assemblyai.com/).
+  - Get your Gemini API key from [Google AI Studio](https://aistudio.google.com/).
 
-Start the backend server:
+- **Start backend server**:
 
-npm start
+  ```bash
+  npm start
+  ```
 
-The server will start on http://localhost:3001. Keep this terminal window open.
+  > Server runs on http://localhost:3001
 
-2. Frontend Setup
-Open a new terminal window.
+---
 
-Navigate to the frontend directory:
+### 2️⃣ Frontend Setup
 
+Open a new terminal:
+
+```bash
 cd frontend
-
-Install dependencies:
-
 npm install
-
-Start the React development server:
-
 npm run dev
+```
 
-The React application will open in your browser, usually at http://localhost:5173.
+> App opens at http://localhost:5173
 
-3. Using the App
-Open the frontend URL in your browser.
+---
 
-Click "Choose an audio file..." and select an audio file (e.g., .mp3, .wav, .m4a).
+## 🖥️ Usage
 
-Click "Transcribe Audio". You will see the status change to "Uploading..." and then "Transcribing...".
+1. **Go to the frontend URL** in your browser.
+2. **Click "Choose an audio file..."** and select your meeting audio (any format: .mp3, .wav, .m4a, etc.), then click **"Analyze"**.
+3. **Processing steps** will display:
+   - Uploading
+   - Transcribing
+   - Summarizing
+   - Complete
+4. **Once complete, use the tabs to view:**
+   - **Transcript**: Full transcription of your meeting
+   - **Summary**: AI-generated meeting summary
+   - **Decisions**: Key decisions made
+   - **Actions**: Action items identified
 
-Wait for the transcription to complete. This can take some time depending on the length of the audio.
+   ![App UI Example](assets/app-ui-example.png)
 
-Once complete, the transcript will appear.
+---
 
-Click "Generate Summary" to get the AI-powered summary, key decisions, and action items.
+## 🛠️ Technologies
+
+- **Frontend**: React
+- **Backend**: Node.js, Express
+- **APIs**: AssemblyAI, Gemini
+
+---
+
+## 📬 Contributing
+
+Pull requests welcome! For major changes, please open an issue first to discuss what you would like to change.
+
+---
+
+## 📄 License
+
+[MIT](LICENSE)
